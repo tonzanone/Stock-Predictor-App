@@ -5,13 +5,16 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 import pandas as pd
 
+# This is API Key of stocksymbol API. Use your own key.
 api_key = 'daf2adb4-22db-4ded-becd-b7c7aeddc75a'
 ss = StockSymbol(api_key)
 
-st.title(" Stock Predictor ")
-
+# This is title
+st.title("StockSage - Stock Predictor ")
+# Image used
 st.image("stock_img.jpg")
 
+# Different sections for different things such as view , predict and search
 sec_one = st.container()
 sec_two = st.container()
 sec_three = st.container()
@@ -38,6 +41,7 @@ def Starting_sys(_ss):
 
 total_ss = Starting_sys(ss)
 
+# searches for stocks starting with search_key
 def search(list_ss,search_key):
     search_key = search_key.upper()
     t = []
@@ -51,6 +55,7 @@ def search(list_ss,search_key):
     else:
         return t
 
+# returns data of stock for 60 days max
 def stock_x_days(list_ss, stock, x=10):
     if stock not in list_ss:
         print("No such stock available")
@@ -66,6 +71,7 @@ def stock_x_days(list_ss, stock, x=10):
         stock_data['Date'] = pd.to_datetime(stock_data['Date']).dt.date
         return stock_data
 
+# return data of stock for unlimited days as much as you desire
 def stock_x_days_unlimited(list_ss, stock, x=10):
     if stock not in list_ss:
         print("No such stock available")
@@ -78,7 +84,7 @@ def stock_x_days_unlimited(list_ss, stock, x=10):
         stock_data['Date'] = pd.to_datetime(stock_data['Date']).dt.date
         return stock_data
 
-
+# Prediction part
 def real_production(train_data,model_name,start,end,start2,d):
     if model_name == 'model_lr':
         X = train_data[start].values.reshape(-1, 1)
