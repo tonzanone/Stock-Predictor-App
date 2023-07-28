@@ -13,6 +13,7 @@ ss = StockSymbol(api_key)
 st.title("StockSage - Stock Predictor ")
 # Image used
 st.image("stock_img.jpg")
+st.caption("Credit to Unsplash")
 
 # Different sections for different things such as view , predict and search
 sec_one = st.container()
