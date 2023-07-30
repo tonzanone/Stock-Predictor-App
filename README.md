@@ -6,4 +6,5 @@ Explore additional metrics to enhance your analysis. This all-in-one solution em
 
 [You can access the deployed site here .](https://stock-predictor-app.streamlit.app/)
 
+**Disclaimer:** This is a learning project to apply Data Science skills in Python. Thus, the insights from this project should not be taken as investment advice.
 **Note** - The app is still in work. 
